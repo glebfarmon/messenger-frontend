@@ -1,0 +1,20 @@
+{
+	"name": "Chatty",
+	"start_url": "/",
+	"short_name": "Chatty",
+	"icons": [
+		{
+			"src": "/favicons/android-chrome-240.webp",
+			"sizes": "240x240",
+			"type": "image/webp",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/favicons/android-chrome-240.webp",
+			"sizes": "240x240",
+			"type": "image/webp"
+		}
+	],
+	"display": "standalone",
+	"orientation": "portrait"
+}

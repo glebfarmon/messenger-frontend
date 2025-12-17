@@ -1,11 +1,12 @@
 import type {Metadata} from 'next'
-import {Geist} from 'next/font/google'
+import {Open_Sans} from 'next/font/google'
+import {ThemeProvider} from '@/components/providers'
 import {config} from '@/config'
 import {DESCRIPTION, KEYWORDS} from '@/constants'
 import './globals.css'
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
+const openSans = Open_Sans({
+	variable: '--font-open-sans',
 	subsets: ['latin']
 })
 
@@ -64,8 +65,15 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en'>
-			<body className={`${geistSans.variable} antialiased`}>{children}</body>
+		<html
+			lang={'en'}
+			suppressHydrationWarning>
+			<ThemeProvider
+				attribute={'class'}
+				defaultTheme={'system'}
+				enableSystem>
+				<body className={`${openSans.variable} antialiased`}>{children}</body>
+			</ThemeProvider>
 		</html>
 	)
 }

@@ -1,0 +1,21 @@
+{
+	"Auth": {
+		"RegisterPage": {
+			"pageTitle": "Authentication",
+			"title": "Welcome 👋",
+			"description": "Real-time messenger — chat instantly, anywhere, anytime.",
+			"email": "Email",
+			"password": "Password",
+			"signin": "Sign in",
+			"signup": "Sign up",
+			"orSignUpWith": "Or sign up with",
+			"or": "Or",
+			"signUpWithGoogle": "Sign up with Google",
+			"signUpWithFacebook": "Sign up with Facebook",
+			"google": "Google",
+			"facebook": "Facebook",
+			"alreadyHaveAccount": "Already have an account?",
+			"allRightsReserved": "All rights reserved"
+		}
+	}
+}

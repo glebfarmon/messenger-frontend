@@ -1,0 +1,21 @@
+{
+	"Auth": {
+		"RegisterPage": {
+			"pageTitle": "Uwierzytelnianie",
+			"title": "Witaj 👋",
+			"description": "Real-time messenger — rozmawiaj od razu, zawsze i wszędzie.",
+			"email": "Email",
+			"password": "Hasło",
+			"signin": "Zaloguj się",
+			"signup": "Zarejestruj się",
+			"orSignUpWith": "Lub zarejestruj się za pomocą",
+			"or": "Lub",
+			"signUpWithGoogle": "Zarejestruj się przez Google",
+			"signUpWithFacebook": "Zarejestruj się przez Facebook",
+			"google": "Google",
+			"facebook": "Facebook",
+			"alreadyHaveAccount": "Masz już konto?",
+			"allRightsReserved": "Wszelkie prawa zastrzeżone"
+		}
+	}
+}

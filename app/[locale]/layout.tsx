@@ -1,9 +1,18 @@
 import type {Metadata} from 'next'
+import {hasLocale, NextIntlClientProvider} from 'next-intl'
+import {setRequestLocale} from 'next-intl/server'
 import {Open_Sans} from 'next/font/google'
+import {notFound} from 'next/navigation'
 import {ThemeProvider} from '@/components/providers'
 import {config} from '@/config'
 import {DESCRIPTION, KEYWORDS} from '@/constants'
 import './globals.css'
+import {routing} from '@/i18n/routing'
+
+type Props = {
+	children: React.ReactNode
+	params: Promise<{locale: string}>
+}
 
 const openSans = Open_Sans({
 	variable: '--font-open-sans',
@@ -59,21 +68,31 @@ export const metadata: Metadata = {
 	}
 }
 
-export default function RootLayout({
-	children
-}: Readonly<{
-	children: React.ReactNode
-}>) {
+export function generateStaticParams() {
+	return routing.locales.map(locale => ({locale}))
+}
+
+export default async function RootLayout({children, params}: Props) {
+	const {locale} = await params
+	if (!hasLocale(routing.locales, locale)) {
+		notFound()
+	}
+	setRequestLocale(locale)
+
 	return (
 		<html
-			lang={'en'}
+			lang={locale}
 			suppressHydrationWarning>
-			<ThemeProvider
-				attribute={'class'}
-				defaultTheme={'system'}
-				enableSystem>
-				<body className={`${openSans.variable} antialiased`}>{children}</body>
-			</ThemeProvider>
+			<body className={`${openSans.variable} antialiased`}>
+				<NextIntlClientProvider messages={null}>
+					<ThemeProvider
+						attribute={'class'}
+						defaultTheme={'system'}
+						enableSystem>
+						{children}
+					</ThemeProvider>
+				</NextIntlClientProvider>
+			</body>
 		</html>
 	)
 }

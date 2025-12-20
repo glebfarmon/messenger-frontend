@@ -3,7 +3,7 @@ import {hasLocale, NextIntlClientProvider} from 'next-intl'
 import {setRequestLocale} from 'next-intl/server'
 import {Open_Sans} from 'next/font/google'
 import {notFound} from 'next/navigation'
-import {ThemeProvider} from '@/components/providers'
+import {QueryProvider, ThemeProvider} from '@/components/providers'
 import {config} from '@/config'
 import {DESCRIPTION, KEYWORDS} from '@/constants'
 import './globals.css'
@@ -89,7 +89,7 @@ export default async function RootLayout({children, params}: Props) {
 						attribute={'class'}
 						defaultTheme={'system'}
 						enableSystem>
-						{children}
+						<QueryProvider>{children}</QueryProvider>
 					</ThemeProvider>
 				</NextIntlClientProvider>
 			</body>

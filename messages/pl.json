@@ -35,6 +35,7 @@
 						"max_length": "Twoje hasło może mieć maksymalnie 24 znaki"
 					},
 					"UNKNOWN": "Nieznany błąd",
+					"VALIDATION_ERROR": "Nieznany błąd",
 					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "Użytkownik już istnieje. Wybierz inny email"
 				}
 			},

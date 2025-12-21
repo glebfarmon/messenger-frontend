@@ -35,6 +35,7 @@
 						"max_length": "Your password must be 24 characters or less"
 					},
 					"UNKNOWN": "Unknown error",
+					"VALIDATION_ERROR": "Unknown error",
 					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "User already exists. Choose another email"
 				}
 			},

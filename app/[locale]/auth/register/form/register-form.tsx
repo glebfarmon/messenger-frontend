@@ -5,17 +5,21 @@ import {useTranslations} from 'next-intl'
 import {Controller, useForm} from 'react-hook-form'
 import {FaFacebook} from 'react-icons/fa'
 import {FcGoogle} from 'react-icons/fc'
+import {toast} from 'sonner'
 import {Button} from '@/components/ui/button'
 import {Field, FieldError, FieldGroup, FieldLabel} from '@/components/ui/field'
 import {Input} from '@/components/ui/input'
 import {Separator} from '@/components/ui/separator'
+import {PAGES} from '@/constants'
 import {intlError} from '@/utils/intl-error'
 import {formSchema, type FormSchema} from './register-form.schema'
 import {useRegister} from '@/features/auth/queries/register'
+import {useRouter} from '@/i18n/navigation'
 
 export const RegisterForm = () => {
 	const t = useTranslations('Auth.RegisterPage.Form')
-	const register = useRegister(t)
+	const {mutate: register, isPending} = useRegister(t)
+	const router = useRouter()
 
 	const form = useForm<FormSchema>({
 		resolver: valibotResolver(formSchema),
@@ -29,7 +33,13 @@ export const RegisterForm = () => {
 
 	const onSubmit = async (data: FormSchema) => {
 		console.log('hello', data)
-		register(data)
+		register(data, {
+			onSuccess: () => {
+				router.push(PAGES.LOGIN)
+				toast.success('Successfully registered')
+				toast.info('Please check your email to verify your account')
+			}
+		})
 	}
 
 	return (
@@ -118,6 +128,7 @@ export const RegisterForm = () => {
 				/>
 
 				<Button
+					isLoading={!!isPending}
 					type={'submit'}
 					className={'mt-4 h-11 w-full sm:h-12 md:mt-4'}>
 					{t('signup')}

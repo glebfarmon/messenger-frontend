@@ -12,5 +12,5 @@ export const useRegister = (t: TProp) => {
 	return useMutation({
 		mutationFn: registerMutation,
 		onError: handleAuthError(t)
-	}).mutate
+	})
 }

@@ -4,16 +4,37 @@
 			"pageTitle": "Uwierzytelnianie",
 			"title": "Witaj 👋",
 			"description": "Real-time messenger — rozmawiaj od razu, zawsze i wszędzie.",
-			"email": "Email",
-			"password": "Hasło",
-			"signin": "Zaloguj się",
-			"signup": "Zarejestruj się",
-			"orSignUpWith": "Lub zarejestruj się za pomocą",
-			"or": "Lub",
-			"signUpWithGoogle": "Zarejestruj się przez Google",
-			"signUpWithFacebook": "Zarejestruj się przez Facebook",
-			"google": "Google",
-			"facebook": "Facebook",
+			"Form": {
+				"name": "Imię",
+				"email": "Email",
+				"password": "Hasło",
+				"signin": "Zaloguj się",
+				"signup": "Zarejestruj się",
+				"orSignUpWith": "Lub zarejestruj się za pomocą",
+				"or": "Lub",
+				"signUpWithGoogle": "Zarejestruj się przez Google",
+				"signUpWithFacebook": "Zarejestruj się przez Facebook",
+				"google": "Google",
+				"facebook": "Facebook",
+				"errors": {
+					"name": {
+						"string": "Twoje imię musi być tekstem",
+						"non_empty": "Proszę wpisz swoje imię",
+						"regex": "Wpisz imię i nazwisko (np. John Smith)"
+					},
+					"email": {
+						"string": "Twój email musi być tekstem",
+						"non_empty": "Proszę wpisz swój email",
+						"email": "Adres email jest niepoprawny"
+					},
+					"password": {
+						"string": "Twoje hasło musi być tekstem",
+						"non_empty": "Proszę wpisz swoje hasło",
+						"min_length": "Twoje hasło musi mieć co najmniej 8 znaków",
+						"max_length": "Twoje hasło może mieć maksymalnie 24 znaki"
+					}
+				}
+			},
 			"alreadyHaveAccount": "Masz już konto?",
 			"allRightsReserved": "Wszelkie prawa zastrzeżone"
 		}

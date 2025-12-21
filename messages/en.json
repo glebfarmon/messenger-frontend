@@ -4,16 +4,37 @@
 			"pageTitle": "Authentication",
 			"title": "Welcome 👋",
 			"description": "Real-time messenger — chat instantly, anywhere, anytime.",
-			"email": "Email",
-			"password": "Password",
-			"signin": "Sign in",
-			"signup": "Sign up",
-			"orSignUpWith": "Or sign up with",
-			"or": "Or",
-			"signUpWithGoogle": "Sign up with Google",
-			"signUpWithFacebook": "Sign up with Facebook",
-			"google": "Google",
-			"facebook": "Facebook",
+			"Form": {
+				"name": "Name",
+				"email": "Email",
+				"password": "Password",
+				"signin": "Sign in",
+				"signup": "Sign up",
+				"orSignUpWith": "Or sign up with",
+				"or": "Or",
+				"signUpWithGoogle": "Sign up with Google",
+				"signUpWithFacebook": "Sign up with Facebook",
+				"google": "Google",
+				"facebook": "Facebook",
+				"errors": {
+					"name": {
+						"string": "Your name must be a string",
+						"non_empty": "Please enter your name",
+						"regex": "Enter first and last name (e.g. John Smith)"
+					},
+					"email": {
+						"string": "Your email must be a string",
+						"non_empty": "Please enter your email",
+						"email": "The email address is badly formatted"
+					},
+					"password": {
+						"string": "Your password must be a string",
+						"non_empty": "Please enter your password",
+						"min_length": "Your password must be 8 characters or more",
+						"max_length": "Your password must be 24 characters or less"
+					}
+				}
+			},
 			"alreadyHaveAccount": "Already have an account?",
 			"allRightsReserved": "All rights reserved"
 		}

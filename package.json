@@ -21,6 +21,7 @@
 		"@base-ui/react": "^1.0.0",
 		"@hookform/resolvers": "^5.2.2",
 		"@tanstack/react-query": "^5.68.0",
+		"axios": "^1.13.2",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^0.562.0",
@@ -33,6 +34,7 @@
 		"react-icons": "^5.5.0",
 		"shadcn": "^3.6.2",
 		"sharp": "^0.34.5",
+		"sonner": "^2.0.7",
 		"valibot": "^1.2.0"
 	},
 	"devDependencies": {

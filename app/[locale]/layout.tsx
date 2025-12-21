@@ -4,6 +4,7 @@ import {setRequestLocale} from 'next-intl/server'
 import {Open_Sans} from 'next/font/google'
 import {notFound} from 'next/navigation'
 import {QueryProvider, ThemeProvider} from '@/components/providers'
+import {Toaster} from '@/components/ui/sonner'
 import {config} from '@/config'
 import {DESCRIPTION, KEYWORDS} from '@/constants'
 import './globals.css'
@@ -89,7 +90,10 @@ export default async function RootLayout({children, params}: Props) {
 						attribute={'class'}
 						defaultTheme={'system'}
 						enableSystem>
-						<QueryProvider>{children}</QueryProvider>
+						<QueryProvider>
+							{children}
+							<Toaster />
+						</QueryProvider>
 					</ThemeProvider>
 				</NextIntlClientProvider>
 			</body>

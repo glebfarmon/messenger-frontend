@@ -20,7 +20,8 @@
 					"name": {
 						"string": "Your name must be a string",
 						"non_empty": "Please enter your name",
-						"regex": "Enter first and last name (e.g. John Smith)"
+						"regex": "Enter first and last name (e.g. John Smith)",
+						"max_length": "Your name must be 24 characters or less"
 					},
 					"email": {
 						"string": "Your email must be a string",
@@ -32,7 +33,9 @@
 						"non_empty": "Please enter your password",
 						"min_length": "Your password must be 8 characters or more",
 						"max_length": "Your password must be 24 characters or less"
-					}
+					},
+					"UNKNOWN": "Unknown error",
+					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "User already exists. Choose another email"
 				}
 			},
 			"alreadyHaveAccount": "Already have an account?",

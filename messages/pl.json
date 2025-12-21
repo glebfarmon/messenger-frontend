@@ -20,7 +20,8 @@
 					"name": {
 						"string": "Twoje imię musi być tekstem",
 						"non_empty": "Proszę wpisz swoje imię",
-						"regex": "Wpisz imię i nazwisko (np. John Smith)"
+						"regex": "Wpisz imię i nazwisko (np. John Smith)",
+						"max_length": "Twoje imię może mieć maksymalnie 24 znaki"
 					},
 					"email": {
 						"string": "Twój email musi być tekstem",
@@ -32,7 +33,9 @@
 						"non_empty": "Proszę wpisz swoje hasło",
 						"min_length": "Twoje hasło musi mieć co najmniej 8 znaków",
 						"max_length": "Twoje hasło może mieć maksymalnie 24 znaki"
-					}
+					},
+					"UNKNOWN": "Nieznany błąd",
+					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "Użytkownik już istnieje. Wybierz inny email"
 				}
 			},
 			"alreadyHaveAccount": "Masz już konto?",

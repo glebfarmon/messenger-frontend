@@ -11,9 +11,11 @@ import {Input} from '@/components/ui/input'
 import {Separator} from '@/components/ui/separator'
 import {intlError} from '@/utils/intl-error'
 import {formSchema, type FormSchema} from './register-form.schema'
+import {useRegister} from '@/features/auth/queries/register'
 
 export const RegisterForm = () => {
 	const t = useTranslations('Auth.RegisterPage.Form')
+	const register = useRegister(t)
 
 	const form = useForm<FormSchema>({
 		resolver: valibotResolver(formSchema),
@@ -27,6 +29,7 @@ export const RegisterForm = () => {
 
 	const onSubmit = async (data: FormSchema) => {
 		console.log('hello', data)
+		register(data)
 	}
 
 	return (
@@ -102,6 +105,7 @@ export const RegisterForm = () => {
 								id={'register-form-password'}
 								autoComplete={'new-password'}
 								placeholder={'YourHa%dPa$$word'}
+								type={'password'}
 								aria-label={t('password')}
 								aria-invalid={fieldState.invalid}
 								className={'h-11 sm:h-12'}

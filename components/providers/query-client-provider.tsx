@@ -14,7 +14,7 @@ function makeQueryClient(): QueryClient {
 				gcTime: 5 * 60 * 1000,
 				refetchOnWindowFocus: false,
 				refetchOnReconnect: 'always',
-				retry: 1
+				retry: 0
 			},
 			mutations: {
 				gcTime: 5 * 60 * 1000

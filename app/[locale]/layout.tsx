@@ -4,16 +4,13 @@ import {setRequestLocale} from 'next-intl/server'
 import {Open_Sans} from 'next/font/google'
 import {notFound} from 'next/navigation'
 import {QueryProvider, ThemeProvider} from '@/components/providers'
+import {ModalProvider} from '@/components/providers/modal-provider'
 import {Toaster} from '@/components/ui/sonner'
 import {config} from '@/config'
 import {DESCRIPTION, KEYWORDS} from '@/constants'
+import type {Children, NextProps} from '@/types'
 import './globals.css'
 import {routing} from '@/i18n/routing'
-
-type Props = {
-	children: React.ReactNode
-	params: Promise<{locale: string}>
-}
 
 const openSans = Open_Sans({
 	variable: '--font-open-sans',
@@ -73,7 +70,7 @@ export function generateStaticParams() {
 	return routing.locales.map(locale => ({locale}))
 }
 
-export default async function RootLayout({children, params}: Props) {
+export default async function RootLayout({children, params}: NextProps & Children) {
 	const {locale} = await params
 	if (!hasLocale(routing.locales, locale)) {
 		notFound()
@@ -85,14 +82,16 @@ export default async function RootLayout({children, params}: Props) {
 			lang={locale}
 			suppressHydrationWarning>
 			<body className={`${openSans.variable} antialiased`}>
-				<NextIntlClientProvider messages={null}>
+				<NextIntlClientProvider>
 					<ThemeProvider
 						attribute={'class'}
 						defaultTheme={'system'}
 						enableSystem>
 						<QueryProvider>
-							{children}
-							<Toaster />
+							<ModalProvider>
+								{children}
+								<Toaster />
+							</ModalProvider>
 						</QueryProvider>
 					</ThemeProvider>
 				</NextIntlClientProvider>

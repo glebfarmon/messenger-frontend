@@ -12,19 +12,18 @@ import {Input} from '@/components/ui/input'
 import {Separator} from '@/components/ui/separator'
 import {PAGES} from '@/constants'
 import {intlError} from '@/utils/intl-error'
-import {formSchema, type FormSchema} from './register-form.schema'
-import {useRegister} from '@/features/auth/queries/register'
+import {formSchema, type FormSchema} from './login-form.schema'
+import {useLogin} from '@/features/auth/queries/login'
 import {useRouter} from '@/i18n/navigation'
 
-export const RegisterForm = () => {
-	const t = useTranslations('Auth.RegisterPage.Form')
-	const {mutate: register, isPending} = useRegister(t)
+export const LoginForm = () => {
+	const t = useTranslations('Auth.LoginPage.Form')
+	const {mutate: login, isPending} = useLogin(t)
 	const router = useRouter()
 
 	const form = useForm<FormSchema>({
 		resolver: valibotResolver(formSchema),
 		defaultValues: {
-			name: '',
 			email: '',
 			password: ''
 		}
@@ -32,13 +31,10 @@ export const RegisterForm = () => {
 	const {control, handleSubmit} = form
 
 	const onSubmit = async (data: FormSchema) => {
-		register(data, {
+		login(data, {
 			onSuccess: () => {
-				router.push(PAGES.LOGIN)
-				toast(t('success'), {
-					description: t('verifyEmail'),
-					duration: 8000
-				})
+				router.push(PAGES.MAIN)
+				toast.success('Successfully logged in')
 			}
 		})
 	}
@@ -46,47 +42,22 @@ export const RegisterForm = () => {
 	return (
 		<form
 			className={'space-y-5 md:max-w-md md:space-y-6'}
-			id={'register-form'}
+			id={'login-form'}
 			onSubmit={handleSubmit(onSubmit)}>
 			<FieldGroup className={'gap-4'}>
-				<Controller
-					name={'name'}
-					control={control}
-					render={({field, fieldState}) => (
-						<Field data-invalid={fieldState.invalid}>
-							<FieldLabel
-								htmlFor={'register-form-name'}
-								className={'leading-none'}>
-								{t('name')}
-							</FieldLabel>
-							<Input
-								{...field}
-								id={'register-form-name'}
-								autoComplete={'name'}
-								placeholder={'John Smith'}
-								aria-label={t('name')}
-								aria-invalid={fieldState.invalid}
-								className={'h-11 sm:h-12'}
-							/>
-							{fieldState.invalid && (
-								<FieldError errors={[intlError(t, field.name, fieldState.error?.type)]} />
-							)}
-						</Field>
-					)}
-				/>
 				<Controller
 					name={'email'}
 					control={control}
 					render={({field, fieldState}) => (
 						<Field data-invalid={fieldState.invalid}>
 							<FieldLabel
-								htmlFor={'register-form-email'}
+								htmlFor={'login-form-email'}
 								className={'leading-none'}>
 								{t('email')}
 							</FieldLabel>
 							<Input
 								{...field}
-								id={'register-form-email'}
+								id={'login-form-email'}
 								autoComplete={'email'}
 								placeholder={'yourmail@gmail.com'}
 								aria-label={t('email')}
@@ -106,13 +77,13 @@ export const RegisterForm = () => {
 					render={({field, fieldState}) => (
 						<Field data-invalid={fieldState.invalid}>
 							<FieldLabel
-								htmlFor={'register-form-password'}
+								htmlFor={'login-form-password'}
 								className={'leading-none'}>
 								{t('password')}
 							</FieldLabel>
 							<Input
 								{...field}
-								id={'register-form-password'}
+								id={'login-form-password'}
 								autoComplete={'new-password'}
 								placeholder={'YourHa%dPa$$word'}
 								type={'password'}
@@ -131,14 +102,14 @@ export const RegisterForm = () => {
 					isLoading={!!isPending}
 					type={'submit'}
 					className={'mt-4 h-11 w-full sm:h-12 md:mt-4'}>
-					{t('signup')}
+					{t('signin')}
 				</Button>
 			</FieldGroup>
 
 			<div className={'flex items-center gap-4 md:max-w-md'}>
 				<Separator className={'flex-1'} />
 				<span className={'text-muted-foreground text-xs tracking-wider uppercase sm:text-sm'}>
-					{t('orSignUpWith')}
+					{t('orSignInWith')}
 				</span>
 				<Separator className={'flex-1'} />
 			</div>
@@ -153,7 +124,7 @@ export const RegisterForm = () => {
 						aria-hidden={'true'}
 					/>
 					<span className={'md:hidden'}>{t('google')}</span>
-					<span className={'hidden md:inline'}>{t('signUpWithGoogle')}</span>
+					<span className={'hidden md:inline'}>{t('signInWithGoogle')}</span>
 				</Button>
 				<Button
 					type={'button'}
@@ -164,7 +135,7 @@ export const RegisterForm = () => {
 						aria-hidden={'true'}
 					/>
 					<span className={'md:hidden'}>{t('facebook')}</span>
-					<span className={'hidden md:inline'}>{t('signUpWithFacebook')}</span>
+					<span className={'hidden md:inline'}>{t('signInWithFacebook')}</span>
 				</Button>
 			</div>
 		</form>

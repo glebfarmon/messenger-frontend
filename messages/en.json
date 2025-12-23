@@ -1,9 +1,15 @@
 {
+	"Global": {
+		"Form": {
+			"close": "Close"
+		}
+	},
 	"Auth": {
 		"RegisterPage": {
 			"pageTitle": "Authentication",
 			"title": "Welcome 👋",
 			"description": "Real-time messenger — chat instantly, anywhere, anytime.",
+			"alreadyHaveAccount": "Already have an account?",
 			"Form": {
 				"name": "Name",
 				"email": "Email",
@@ -37,10 +43,62 @@
 					"UNKNOWN": "Unknown error",
 					"VALIDATION_ERROR": "Unknown error",
 					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "User already exists. Choose another email"
+				},
+				"success": "Successfully registered",
+				"verifyEmail": "Please check your email to verify your account"
+			}
+		},
+		"LoginPage": {
+			"pageTitle": "Authentication",
+			"title": "Welcome back 👋",
+			"description": "Real-time messenger — chat instantly, anywhere, anytime.",
+			"noAccount": "Don't have account?",
+			"Form": {
+				"email": "Email",
+				"password": "Password",
+				"signin": "Sign in",
+				"signup": "Sign up",
+				"orSignInWith": "Or sign in with",
+				"or": "Or",
+				"signInWithGoogle": "Sign in with Google",
+				"signInWithFacebook": "Sign in with Facebook",
+				"google": "Google",
+				"facebook": "Facebook",
+				"errors": {
+					"email": {
+						"string": "Your email must be a string",
+						"non_empty": "Please enter your email",
+						"email": "The email address is badly formatted"
+					},
+					"password": {
+						"string": "Your password must be a string",
+						"non_empty": "Please enter your password",
+						"min_length": "Your password must be 8 characters or more",
+						"max_length": "Your password must be 24 characters or less"
+					},
+					"UNKNOWN": "Unknown error",
+					"VALIDATION_ERROR": "Unknown error",
+					"INVALID_EMAIL_OR_PASSWORD": "Invalid email or password",
+					"EMAIL_NOT_VERIFIED": "Please verify your email to continue"
 				}
+			}
+		},
+		"EmailVerificationPage": {
+			"pageTitle": "Email verification",
+			"error": {
+				"title": "Email not verified",
+				"description": "An unexpected error occurred. Please contact our support team at info@glebus.app"
 			},
-			"alreadyHaveAccount": "Already have an account?",
-			"allRightsReserved": "All rights reserved"
-		}
+			"loading": {
+				"title": "Verifying email",
+				"description": "Please wait a few seconds. This won’t take long"
+			},
+			"success": {
+				"title": "Email verified",
+				"description": "Your account has been confirmed. You will be redirected to the login page in 5 seconds..."
+			},
+			"button": "Go to main page"
+		},
+		"allRightsReserved": "All rights reserved"
 	}
 }

@@ -126,3 +126,63 @@
     @apply bg-background text-foreground;
   }
 }
+
+.modal {
+	opacity: 0;
+	animation: enterAnimationModal 0.2s ease-out forwards;
+}
+
+.modal.exit {
+	opacity: 1;
+	animation: exitAnimationModal 0.2s ease-out forwards;
+}
+
+.modal-layout {
+	opacity: 0;
+	animation: enterAnimationModalLayout 0.2s ease-out forwards;
+}
+
+.modal-layout.exit {
+	opacity: 1;
+	animation: exitAnimationModalLayout 0.2s ease-out forwards;
+}
+
+@keyframes enterAnimationModal {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes exitAnimationModal {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+}
+
+@keyframes enterAnimationModalLayout {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes exitAnimationModalLayout {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}

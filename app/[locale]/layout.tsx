@@ -3,6 +3,7 @@ import {hasLocale, NextIntlClientProvider} from 'next-intl'
 import {setRequestLocale} from 'next-intl/server'
 import {Open_Sans} from 'next/font/google'
 import {notFound} from 'next/navigation'
+import NextTopLoader from 'nextjs-toploader'
 import {QueryProvider, ThemeProvider} from '@/components/providers'
 import {ModalProvider} from '@/components/providers/modal-provider'
 import {Toaster} from '@/components/ui/sonner'
@@ -82,6 +83,7 @@ export default async function RootLayout({children, params}: NextProps & Childre
 			lang={locale}
 			suppressHydrationWarning>
 			<body className={`${openSans.variable} antialiased`}>
+				<NextTopLoader color={'#3F6DF0'} />
 				<NextIntlClientProvider>
 					<ThemeProvider
 						attribute={'class'}

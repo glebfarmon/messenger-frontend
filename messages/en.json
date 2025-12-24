@@ -40,9 +40,9 @@
 						"min_length": "Your password must be 8 characters or more",
 						"max_length": "Your password must be 24 characters or less"
 					},
-					"UNKNOWN": "Unknown error",
-					"VALIDATION_ERROR": "Unknown error",
-					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "User already exists. Choose another email"
+					"unknown": "Unknown error",
+					"validation_error": "Unknown error",
+					"user_already_exists_use_another_email": "User already exists. Choose another email"
 				},
 				"success": "Successfully registered",
 				"verifyEmail": "Please check your email to verify your account"
@@ -76,10 +76,10 @@
 						"min_length": "Your password must be 8 characters or more",
 						"max_length": "Your password must be 24 characters or less"
 					},
-					"UNKNOWN": "Unknown error",
-					"VALIDATION_ERROR": "Unknown error",
-					"INVALID_EMAIL_OR_PASSWORD": "Invalid email or password",
-					"EMAIL_NOT_VERIFIED": "Please verify your email to continue"
+					"unknown": "Unknown error",
+					"validation_error": "Unknown error",
+					"invalid_email_or_password": "Invalid email or password",
+					"email_not_verified": "Please verify your email to continue"
 				}
 			}
 		},
@@ -96,6 +96,22 @@
 			"success": {
 				"title": "Email verified",
 				"description": "Your account has been confirmed. You will be redirected to the login page in 5 seconds..."
+			},
+			"resend": {
+				"title": "Verify your email address",
+				"description": "To get started with our service, please confirm your email address by clicking the link we sent you",
+				"button": "Resend email",
+				"help": "Need help? Contact us at info@glebus.app",
+				"success": {
+					"title": "We've resent the verification email. Please check your inbox",
+					"description": "Don’t forget to check your spam folder"
+				},
+				"errors": {
+					"unknown": "Unknown error",
+					"invalid_email": "Invalid email",
+					"email_abuse_24h": "Email already sent. Try later",
+					"email_abuse_1m": "Email already sent. Try again in 1 minute"
+				}
 			},
 			"button": "Go to main page"
 		},

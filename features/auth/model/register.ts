@@ -3,3 +3,7 @@ export type RegisterPayload = {
 	email: string
 	password: string
 }
+
+export type RegisterResponse = {
+	hashedEmail: string
+}

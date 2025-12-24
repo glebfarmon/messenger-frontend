@@ -5,7 +5,7 @@ import type {LoginPayload} from '@/features/auth/model/login'
 
 const loginMutation = async (data: LoginPayload) => {
 	const response = await axios.post('/auth/sign-in/email', data)
-	return response
+	return response.data
 }
 
 export const useLogin = (t: TProp) => {

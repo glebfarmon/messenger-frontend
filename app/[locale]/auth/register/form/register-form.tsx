@@ -33,8 +33,8 @@ export const RegisterForm = () => {
 
 	const onSubmit = async (data: FormSchema) => {
 		register(data, {
-			onSuccess: () => {
-				router.push(PAGES.LOGIN)
+			onSuccess: ({hashedEmail}) => {
+				router.push({pathname: PAGES.RESEND_EMAIL, query: {token: hashedEmail}})
 				toast(t('success'), {
 					description: t('verifyEmail'),
 					duration: 8000
@@ -42,6 +42,7 @@ export const RegisterForm = () => {
 			}
 		})
 	}
+	//Каптча (+ проверка на NestJS)
 
 	return (
 		<form

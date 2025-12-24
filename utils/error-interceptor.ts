@@ -20,7 +20,7 @@ const authErrorHandler = (e: unknown, t: TProp) => {
 		'code' in e.response.data &&
 		typeof e.response.data.code === 'string'
 	) {
-		return toast.error(t(`errors.${e.response.data.code}`))
+		return toast.error(t(`errors.${e.response.data.code.toLowerCase()}`))
 	}
 
 	return toast.error(t('errors.unknown'))

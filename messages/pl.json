@@ -40,9 +40,9 @@
 						"min_length": "Twoje hasło musi mieć co najmniej 8 znaków",
 						"max_length": "Twoje hasło może mieć maksymalnie 24 znaki"
 					},
-					"UNKNOWN": "Nieznany błąd",
-					"VALIDATION_ERROR": "Nieznany błąd",
-					"USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL": "Użytkownik już istnieje. Wybierz inny email"
+					"unknown": "Nieznany błąd",
+					"validation_error": "Nieznany błąd",
+					"user_already_exists_use_another_email": "Użytkownik już istnieje. Wybierz inny email"
 				},
 				"success": "Pomyślnie zarejestrowano",
 				"verifyEmail": "Proszę sprawdzić swój email, aby zweryfikować konto"
@@ -76,10 +76,10 @@
 						"min_length": "Twoje hasło musi mieć co najmniej 8 znaków",
 						"max_length": "Twoje hasło może mieć maksymalnie 24 znaki"
 					},
-					"UNKNOWN": "Nieznany błąd",
-					"VALIDATION_ERROR": "Nieznany błąd",
-					"INVALID_EMAIL_OR_PASSWORD": "Niepoprawny email lub hasło",
-					"EMAIL_NOT_VERIFIED": "Proszę zweryfikować swój email, aby kontynuować"
+					"unknown": "Nieznany błąd",
+					"validation_error": "Nieznany błąd",
+					"invalid_email_or_password": "Niepoprawny email lub hasło",
+					"email_not_verified": "Proszę zweryfikować swój email, aby kontynuować"
 				}
 			}
 		},
@@ -96,6 +96,22 @@
 			"success": {
 				"title": "Email został pomyślnie zweryfikowany",
 				"description": "Twoje konto zostało potwierdzone. Za 5 sekund zostaniesz przekierowany na stronę logowania..."
+			},
+			"resend": {
+				"title": "Zweryfikuj swój adres email",
+				"description": "Aby rozpocząć korzystanie z naszej usługi, potwierdź swój adres email, klikając link, który do Ciebie wysłaliśmy",
+				"button": "Wyślij ponownie",
+				"help": "Potrzebujesz pomocy? Skontaktuj się z nami: info@glebus.app",
+				"success": {
+					"title": "Ponownie wysłaliśmy email weryfikacyjny. Sprawdź swoją skrzynkę odbiorczą",
+					"description": "Nie zapomnij sprawdzić folderu spam"
+				},
+				"errors": {
+					"unknown": "Nieznany błąd",
+					"invalid_email": "Nieprawidłowy adres e-mail",
+					"email_abuse_24h": "Email został już wysłany. Spróbuj później",
+					"email_abuse_1m": "Email został już wysłany. Spróbuj ponownie za 1 minutę"
+				}
 			},
 			"button": "Przejdź do strony głównej"
 		},

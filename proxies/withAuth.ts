@@ -67,7 +67,7 @@ const checkServerAuth = async (
 	cookieHeader: string | null
 ): Promise<{authorized: boolean; setCookie: string | null}> => {
 	try {
-		const res = await fetch(`${config.api_url}/auth/get-session`, {
+		const res = await fetch(`${config.server_api_url}/auth/get-session`, {
 			headers: {
 				Cookie: cookieHeader || ''
 			},
@@ -80,7 +80,7 @@ const checkServerAuth = async (
 			authorized: !!data?.user,
 			setCookie: res.headers.get('set-cookie')
 		}
-	} catch {
+	} catch (e) {
 		return {authorized: false, setCookie: null}
 	}
 }

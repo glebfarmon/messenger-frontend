@@ -3,6 +3,9 @@
 #cursor
 .cursor
 
+#docker compose
+docker-compose.yml
+
 #eslintignore
 .eslintignore
 

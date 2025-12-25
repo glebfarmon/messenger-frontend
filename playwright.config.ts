@@ -1,4 +1,7 @@
 import {defineConfig, devices} from '@playwright/test'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -12,7 +15,7 @@ export default defineConfig({
 	workers: process.env.CI ? 1 : undefined,
 	reporter: [['list'], ['html', {outputFolder: '__tests__/e2e/playwright-report', open: 'never'}]],
 	use: {
-		baseURL: 'http://localhost:3000',
+		baseURL: process.env.NEXT_PUBLIC_URL,
 		trace: 'on-first-retry'
 	},
 
@@ -45,7 +48,7 @@ export default defineConfig({
 
 	webServer: {
 		command: 'pnpm dev',
-		url: 'http://localhost:3000',
+		url: process.env.NEXT_PUBLIC_URL,
 		reuseExistingServer: !process.env.CI
 	}
 })

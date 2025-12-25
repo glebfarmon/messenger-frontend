@@ -80,7 +80,7 @@ const checkServerAuth = async (
 			authorized: !!data?.user,
 			setCookie: res.headers.get('set-cookie')
 		}
-	} catch (e) {
+	} catch {
 		return {authorized: false, setCookie: null}
 	}
 }

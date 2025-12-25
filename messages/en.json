@@ -42,7 +42,8 @@
 					},
 					"unknown": "Unknown error",
 					"validation_error": "Unknown error",
-					"user_already_exists_use_another_email": "User already exists. Choose another email"
+					"user_already_exists_use_another_email": "User already exists. Choose another email",
+					"password_compromised": "Please choose a more secure password"
 				},
 				"success": "Successfully registered",
 				"verifyEmail": "Please check your email to verify your account"

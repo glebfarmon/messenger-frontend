@@ -42,7 +42,8 @@
 					},
 					"unknown": "Nieznany błąd",
 					"validation_error": "Nieznany błąd",
-					"user_already_exists_use_another_email": "Użytkownik już istnieje. Wybierz inny email"
+					"user_already_exists_use_another_email": "Użytkownik już istnieje. Wybierz inny email",
+					"password_compromised": "Hasło jest za słabe, wybierz silniejsze"
 				},
 				"success": "Pomyślnie zarejestrowano",
 				"verifyEmail": "Proszę sprawdzić swój email, aby zweryfikować konto"

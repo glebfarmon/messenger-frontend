@@ -76,16 +76,13 @@ const checkServerAuth = async (
 			cache: 'no-cache'
 		})
 		if (!res.ok) return {authorized: false, setCookie: null}
-		console.log('res', res)
 
 		const data = await res.json()
-		console.log('data', data)
 		return {
 			authorized: !!data?.user,
 			setCookie: res.headers.get('set-cookie')
 		}
 	} catch (e) {
-		console.log('error', e)
 		return {authorized: false, setCookie: null}
 	}
 }

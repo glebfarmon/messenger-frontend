@@ -12,7 +12,9 @@ export const withAuthProxy = (middleware: CustomProxy) => {
 		const {pathname} = request.nextUrl
 
 		//Check JWT
-		const sessionToken = request.cookies.get('better-auth.session_data')?.value
+		const sessionToken =
+			request.cookies.get('better-auth.session_data')?.value ??
+			request.cookies.get('__Secure-better-auth.session_data')?.value
 		let isAuthorized = await isValidJWT(sessionToken)
 		let serverSetCookie: string | null = null
 
@@ -74,13 +76,16 @@ const checkServerAuth = async (
 			cache: 'no-cache'
 		})
 		if (!res.ok) return {authorized: false, setCookie: null}
+		console.log('res', res)
 
 		const data = await res.json()
+		console.log('data', data)
 		return {
 			authorized: !!data?.user,
 			setCookie: res.headers.get('set-cookie')
 		}
-	} catch {
+	} catch (e) {
+		console.log('error', e)
 		return {authorized: false, setCookie: null}
 	}
 }
